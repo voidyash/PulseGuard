@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-n-0: #ffffff;
+  --color-n-25: #f8fafc;
+  --color-n-50: #f1f5f9;
+  --color-n-100: #e2e8f0;
+  --color-n-400: #94a3b8;
+  --color-n-600: #475569;
+  --color-n-800: #1e293b;
+  --color-n-950: #0f172a;
+
+  --color-accent: #0f5f7a;
+  --color-accent-strong: #0f5f7a;
+  --color-accent-soft: #e6f3f7;
+  --color-on-accent: #ffffff;
+
+  --color-stable: #287a67;
+  --color-watch: #9a6700;
+  --color-warning: #b45309;
+  --color-critical: #b4233d;
+  --color-info: #0f5f7a;
+
+  --font-sans: "Segoe UI", "Aptos", system-ui, -apple-system, sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply bg-n-25 text-n-800 antialiased;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-n-0: #1e293b;
+  --color-n-25: #0f172a;
+  --color-n-50: #273449;
+  --color-n-100: #334155;
+  --color-n-400: #94a3b8;
+  --color-n-600: #cbd5e1;
+  --color-n-800: #e2e8f0;
+  --color-n-950: #f8fafc;
+  --color-accent: #7ec8e8;
+  --color-accent-strong: #1e7ea6;
+  --color-accent-soft: #1b3442;
+  --color-stable: #58b79c;
+  --color-watch: #d9a441;
+  --color-warning: #e2954f;
+  --color-critical: #e57385;
+  --color-info: #4e9ec6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/*
+ * PDF report: the print layout renders only .print-report as a two-page
+ * document (page 1 graphs, page 2 detailed writing). Colors are forced to
+ * the light palette so dark-mode sessions still print cleanly.
+ */
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .print-report {
+    --color-n-0: #ffffff;
+    --color-n-25: #f8fafc;
+    --color-n-50: #f1f5f9;
+    --color-n-100: #e2e8f0;
+    --color-n-400: #94a3b8;
+    --color-n-600: #475569;
+    --color-n-800: #1e293b;
+    --color-n-950: #0f172a;
+    --color-accent: #0f5f7a;
+    --color-accent-strong: #0f5f7a;
+    --color-accent-soft: #e6f3f7;
+    --color-on-accent: #ffffff;
+    --color-stable: #287a67;
+    --color-watch: #9a6700;
+    --color-warning: #b45309;
+    --color-critical: #b4233d;
+    --color-info: #0f5f7a;
+  }
+
+  .print-page-break {
+    break-before: page;
+  }
+}

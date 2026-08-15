@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environment (uv)
+.venv/
+
+# Test and lint caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs, temp files, OS junk
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
