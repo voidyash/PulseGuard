@@ -137,7 +137,3 @@ Open http://localhost:5173 and sign in with the demo account `demo` / `demo-pass
 ## Safety
 
 The prototype should use synthetic or appropriately anonymized data. It is intended for clinical decision support demonstration only and does not provide autonomous diagnosis or treatment.
-
-## License
-
-Add an appropriate license before public production use.
